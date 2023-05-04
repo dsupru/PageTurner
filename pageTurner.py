@@ -1,10 +1,16 @@
 import numpy as np
 import cv2 as cv
+import pyautogui
 from recognizer import Recognizer
 from time import time, sleep
 
 def print_result(result, output_image, timestamp_ms: int):
-    print('hand landmarker result: {}'.format(result))
+    if result != None and result.gestures != []:
+        print('hand landmarker result: {}'.format(result.gestures[0][0].category_name))
+        if (result.gestures[0][0].category_name) == 'Thumb_Up':
+            pyautogui.press('right')
+        elif (result.gestures[0][0].category_name) == 'Pointing_Up':
+            pyautogui.press('left')
 
 def main():
     cap = cv.VideoCapture(0)
@@ -22,7 +28,7 @@ def main():
         # Our operations on the frame come here
         image = cv.cvtColor(frame, cv.COLOR_BGR2RGB)
         recognizer.recognize(image, time()*1000)
-        sleep(0.5)
+        sleep(0.7)
         print('ran loop')
         if cv.waitKey(1) == ord('q'):
             break
