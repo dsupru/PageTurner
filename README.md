@@ -13,4 +13,4 @@ Pyautogui is used to control the system and MediaPipe is used to control detecti
 Please run ```pip install -r requirements.txt``` to install the required version of dependencies.
 
 # Running
-Run ```pip install -r requirements.txt``` in terminal to run the application.
+Run ```python pageTurner.py``` in terminal to run the application.
