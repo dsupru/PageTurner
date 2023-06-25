@@ -10,8 +10,8 @@ def main():
         print("Cannot open camera")
         exit()
 
-    gestureHandler = build_gesture_handler('arrows', 1)
-    recognizer = build_recognizer('hand_gesture', gestureHandler.event_action)
+    gestureHandler = build_gesture_handler('arrows', 2)
+    recognizer = build_recognizer('hand_gesture', gestureHandler.event_callback)
 
     while True:
         print('processing frame')

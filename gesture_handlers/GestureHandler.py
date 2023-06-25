@@ -1,23 +1,23 @@
-from threading import Lock
-from time import sleep
+from time import sleep, time
 
+# Base class for event handling
+# Provides a common implementation of event handling
 # Uses a lock as a way to prevent events firing in a rapid succession
 class GestureHandler:
     def __init__(self, cooldownS):
-        self.gesturelock = Lock()
         self.cooldownS = cooldownS
+        self.inActionStartTime = 0
 
+    # is overwritten in a child class
     def event_action(self):
         raise NotImplementedError
 
-    def event_callback(self):
-        locked = self.gestureLock.acquire(
-                blocking=False,
-                timeout=self.cooldownS
-        )
+    def isReady(self):
+        return self.inActionStartTime == 0 \
+                or time() - self.inActionStartTime > self.cooldownS * 1000
 
-        if locked:
-            self.event_action()
-            sleep(self.cooldownS)
-            self.gesturelock.release()
+    def event_callback(self, action_name):
+        if self.isReady():
+            self.inActionStartTime = time()
+            self.event_action(action_name)
 
