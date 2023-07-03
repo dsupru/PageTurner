@@ -14,7 +14,7 @@ class GestureHandler:
 
     def isReady(self):
         return self.inActionStartTime == 0 \
-                or time() - self.inActionStartTime > self.cooldownS * 1000
+                or time() - self.inActionStartTime > self.cooldownS
 
     def event_callback(self, action_name):
         if self.isReady():

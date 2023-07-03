@@ -14,7 +14,6 @@ def main():
     recognizer = build_recognizer('hand_gesture', gestureHandler.event_callback)
 
     while True:
-        print('processing frame')
         # Capture frame-by-frame
         ret, frame = cap.read()
         # if frame is read correctly ret is True
