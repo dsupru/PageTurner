@@ -15,8 +15,6 @@ class MediaPipeRecognizer(BaseRecognizer):
         self.process_results_callback = process_results_callback
         def processed_callback(result, output_image, timestamp_ms: int):
             if result != None and result.gestures != []:
-                print('hand landmarker result: {}'
-                      .format(result.gestures[0][0].category_name))
                 action = result.gestures[0][0].category_name
                 self.process_results_callback(action)
 
