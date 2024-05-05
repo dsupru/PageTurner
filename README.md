@@ -1,5 +1,5 @@
 # Why ?
-Having a cup of tea with a book and feeling annoyed you have to put the book down to turn the page?
+Having a cup of tea with a book and feeling annoyed you have to put the tea down to turn the page?
 Say no more!
 
 This repo allows you to do just that - keep reading your book, viewing your pictures, .. , doing anything it is you're doing if you need to click left/right, I got you!
