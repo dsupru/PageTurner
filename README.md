@@ -2,7 +2,7 @@
 Having a cup of tea with a book and feeling annoyed you have to put the tea down to turn the page?
 Say no more!
 
-This repo allows you to do just that - keep reading your book, viewing your pictures, .. , doing anything it is you're doing if you need to click left/right, I got you!
+This repo allows you to do just that - keep reading your book, doing anything it is you're doing, if you need to click left/right, I got you!
 
 # But how does it work ?
 At it's core this uses MediaPipe framework for hand gesture recognition and pyautogui library to issue keystroke signals.
